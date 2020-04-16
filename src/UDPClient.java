@@ -16,9 +16,10 @@ public class UDPClient {
     }
 
     public static void main(String[] args) throws NumberFormatException, IOException {
-        UDPClient sender = new UDPClient("172.18.0.2",9875);
+
+        UDPClient client = new UDPClient("172.18.0.2",9875);
         System.out.println("-- Running UDP Client at " + InetAddress.getLocalHost() + " --");
-        sender.start();
+        client.start();
     }
 
     private void start() throws IOException {
@@ -52,7 +53,6 @@ public class UDPClient {
                 System.out.println(msg);
             }
         }).start();
-
 
 
         while (!in.trim().equals(username + ":disconnect")) {

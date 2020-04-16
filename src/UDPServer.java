@@ -79,7 +79,7 @@ public class UDPServer {
     }
 
     public static void main(String[] args) throws Exception {
-        UDPServer client = new UDPServer(9875);
-        client.listen();
+        UDPServer server = new UDPServer(9875);
+        server.listen();
     }
 }
