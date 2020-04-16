@@ -10,13 +10,19 @@ docker build -t udp-messenger .
 
 ```
 
+create a network
+
+```shell script
+
+docker network create --subnet=172.18.0.0/16 messengerNetwork
+
+```
+
 ## run server
 
 run this code only once to start the server
 
 ```shell script
-
-docker network create --subnet=172.18.0.0/16 messengerNetwork
 docker run -it --net messengerNetwork --ip 172.18.0.2 -p 9875:9875 udp-messenger java -cp out/production/UDPMessenger UDPServer
 
 ```
